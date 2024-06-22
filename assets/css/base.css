@@ -102,9 +102,8 @@ h1, h2, h3, span, p {
 .content section {
   padding-left: 28px;
   padding-right: 28px;
-  padding-top: 28px;
+  padding-top: 14px;
   padding-bottom: 28px;
-  border-top: 2px solid rgb(241, 241, 241);
 }
 .content section .card-custom-button {
   height: 50px;
