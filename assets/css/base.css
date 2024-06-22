@@ -1,0 +1,352 @@
+/* Google Fonts  */
+/* Bootstrap 5.0 & icons */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+/* Keen-slider*/
+@import url("https://cdn.jsdelivr.net/npm/keen-slider@6.8.5/keen-slider.min.css");
+/* Custom fonts*/
+@font-face {
+  font-family: "graphik_trialbold";
+  src: url("../fonts/graphik-bold-trial-webfont.woff2") format("woff2"), url("../fonts/graphik-bold-trial-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "graphik_triallight";
+  src: url("../fonts/graphik-light-trial-webfont.woff2") format("woff2"), url("../fonts/graphik-light-trial-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "graphik_trialmedium";
+  src: url("../fonts/graphik-medium-trial-webfont.woff2") format("woff2"), url("../fonts/graphik-medium-trial-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "graphik_regular_trialregular";
+  src: url("../fonts/graphik-regular-trial-webfont.woff2") format("woff2"), url("../fonts/graphik-regular-trial-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "graphik_trialsemibold";
+  src: url("../fonts/graphik-semibold-trial-webfont.woff2") format("woff2"), url("../fonts/graphik-semibold-trial-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+:root {
+  /*
+  --ff-main: 'Arial', Helvetica, sans-serif; //n esta sendo usada
+  --ff-poppins: Poppins, Helvetica, sans-serif; // n esta sendo usada
+  --ff-montserrat: Montserrat, Helvetica, sans-serif; // n esta sendo usada
+  */
+  --ff-inter: Inter, Helvetica, sans-serif;
+  --ff-graphik: graphik_regular_trialregular, Helvetica, sans-serif;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, span, p {
+  font-family: "Arial", Helvetica, sans-serif;
+  font-size: 22px;
+  color: rgb(35, 35, 35);
+  line-height: 1.2;
+}
+
+.tollbar {
+  height: 130px;
+  background-color: rgb(130, 10, 209);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px;
+  padding-top: 10px;
+  box-sizing: initial;
+}
+.tollbar .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.tollbar .header .person-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tollbar .header .right-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.tollbar .header .right-icons > * {
+  margin-left: 12px;
+}
+.tollbar h2 {
+  margin: 0;
+  padding: 0;
+  font-family: var(--ff-graphik);
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
+
+.content section {
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  border-top: 2px solid rgb(241, 241, 241);
+}
+.content section .card-custom-button {
+  height: 50px;
+  border-radius: 15px;
+  background-color: rgb(241, 241, 241);
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+}
+.content section .card-custom-button svg {
+  padding-left: 24px;
+  overflow: visible;
+  padding-right: 14px;
+}
+.content section .card-custom-button svg.mt-fix {
+  margin-top: -4px;
+}
+.content section .card-custom-button span {
+  padding-left: 16px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--ff-graphik);
+}
+.content section .card-custom-button.mx-28 {
+  margin-left: 28px;
+  margin-right: 28px;
+}
+.content .content-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 8px;
+}
+.content .content-title h1 {
+  margin: 0;
+  font-size: 18px;
+}
+.content .account {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.content .account .content-title.m-28, .content .account .balance.m-28 {
+  margin-left: 28px;
+  margin-right: 28px;
+}
+.content .account .content-title h1 {
+  font-family: var(--ff-graphik);
+  font-size: 20px;
+  color: rgb(35, 35, 35);
+  font-weight: 600;
+}
+.content .account .balance {
+  font-family: var(--ff-graphik);
+  font-size: 20px;
+  color: rgb(35, 35, 35);
+  margin-top: 10px;
+  font-weight: 600;
+}
+.content .account .carousel-icn {
+  box-sizing: initial;
+  margin-top: 28px;
+  margin-bottom: 28px;
+  padding-left: 28px;
+  width: calc(100% - 28px);
+}
+.content .account .carousel-icn .carousel-icn-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content .account .carousel-icn .carousel-icn-item span {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  justify-content: start;
+  font-family: var(--ff-graphik);
+}
+.content .account .carousel-icn .carousel-icn-item.keen-slider__slide {
+  min-width: calc(22.2222222222% - 14px) !important;
+  max-width: calc(22.2222222222% - 14px) !important;
+}
+.content .account .carousel-icn .carousel-item-circle {
+  width: 68px;
+  height: 68px;
+  border-radius: 68px;
+  background-color: rgb(241, 241, 241);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+.content .account .carousel-texto {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: initial;
+  padding-left: 28px;
+  width: calc(100% - 28px);
+}
+.content .account .carousel-texto .carousel-texto-item {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  border-radius: 15px;
+  background-color: rgb(241, 241, 241);
+  margin-top: 24px;
+  padding: 16px 18px 18px;
+}
+.content .account .carousel-texto .carousel-texto-item p {
+  font-family: var(--ff-inter);
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 400;
+  color: #232323;
+  margin: 0;
+}
+.content .account .carousel-texto .carousel-texto-item p span {
+  color: rgb(130, 10, 209);
+  padding: 0;
+  font-size: 14px;
+  font-weight: 200;
+}
+.content .account .carousel-texto .carousel-texto-item.keen-slider__slide {
+  min-width: calc(66.6666666667% - 3px) !important;
+  max-width: calc(66.6666666667% - 3px) !important;
+}
+.content .credit-card h1 {
+  font-family: var(--ff-graphik);
+  font-size: 20px;
+  color: rgb(35, 35, 35);
+  font-weight: 600;
+}
+.content .credit-card h2 {
+  font-family: var(--ff-graphik);
+  font-size: 20px;
+  color: rgb(35, 35, 35);
+  margin: 0;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.content .credit-card h3 {
+  font-size: 16px;
+  color: rgb(100, 100, 100);
+  font-weight: 400;
+  margin-top: 18px;
+  margin-bottom: 5px;
+}
+.content .credit-card p {
+  font-size: 14px;
+  color: rgb(140, 140, 140);
+}
+.content .credit-card .contant-title {
+  padding-top: 4px;
+}
+.content .loan h1 {
+  font-family: var(--ff-graphik);
+  font-size: 20px;
+  color: rgb(35, 35, 35);
+  font-weight: 600;
+}
+.content .loan p {
+  font-family: var(--ff-inter);
+  margin: 0;
+  font-size: 14px;
+  margin-top: 16px;
+  font-weight: 400;
+}
+.content .investments h1 {
+  font-family: var(--ff-graphik);
+  font-size: 20px;
+  color: rgb(35, 35, 35);
+  font-weight: 600;
+}
+.content .investments p, .content .investments small {
+  color: rgb(140, 140, 140);
+  font-family: var(--ff-inter);
+  margin: 0;
+  font-size: 14px;
+  margin-top: 16px;
+  font-weight: 400;
+}
+.content .insurance h1 {
+  font-family: var(--ff-graphik);
+  font-size: 20px;
+  color: rgb(35, 35, 35);
+  font-weight: 600;
+}
+.content .insurance p, .content .insurance small {
+  color: rgb(140, 140, 140);
+  font-family: var(--ff-inter);
+  margin: 0;
+  font-size: 14px;
+  margin-top: 16px;
+  font-weight: 400;
+}
+.content .discover {
+  border-bottom: 2px solid rgb(241, 241, 241);
+}
+.content .discover h1 {
+  font-family: var(--ff-graphik);
+  font-size: 20px;
+  color: rgb(35, 35, 35);
+  font-weight: 600;
+}
+.content .discover p {
+  font-family: var(--ff-inter);
+  margin: 0;
+  font-size: 14px;
+  margin-top: 16px;
+  font-weight: 400;
+}
+.content .discover .content-title {
+  margin-left: 28px;
+}
+.content .discover .carousel-discover {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: initial;
+  padding-left: 28px;
+  width: calc(100% - 28px);
+}
+.content .discover .carousel-discover .carousel-discover-item {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  border-radius: 15px;
+  background-color: rgb(241, 241, 241);
+  margin-top: 24px;
+}
+.content .discover .carousel-discover .carousel-discover-item p {
+  font-family: var(--ff-inter);
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 400;
+  color: #232323;
+  margin: 0;
+}
+.content .discover .carousel-discover .carousel-discover-item p span {
+  color: rgb(130, 10, 209);
+  padding: 0;
+  font-size: 14px;
+  font-weight: 200;
+}
