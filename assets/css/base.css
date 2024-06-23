@@ -68,6 +68,9 @@ h1, h2, h3, span, p {
   padding-top: 10px;
   box-sizing: initial;
 }
+.tollbar.tollbar-logged {
+  height: 40px;
+}
 .tollbar .header {
   display: flex;
   flex-direction: row;

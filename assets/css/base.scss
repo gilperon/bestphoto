@@ -51,6 +51,10 @@ h1,h2,h3,span,p{
     box-sizing: initial;
    // background:linear-gradient(180deg, #ff4586 0%, #f2295b 100%);
 
+   &.tollbar-logged{
+    height:40px;
+   }
+
     .header{
         display:flex;
         flex-direction: row;
