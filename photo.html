@@ -51,7 +51,7 @@
         
                   Rate Photos
                 </h6>
-                <h6 class="m-0" style="
+                <h6 id="icon-cash" class="m-0" style="
                     display: flex;
                     font-family: 'Poppins', sans-serif;
                     font-weight: 600;
@@ -60,7 +60,7 @@
                     justify-content: center;
                     align-items: center;zoom:.96;
                   ">
-                  <img id="icon-cash" src="./assets/img/icon-cash.png" style=" height: 30px;z-index: 1;filter:hue-rotate(175deg);filter:hue-rotate(335deg);"><span style="
+                  <img src="./assets/img/icon-cash.png" style=" height: 30px;z-index: 1;filter:hue-rotate(175deg);filter:hue-rotate(335deg);"><span style="
                       display: block;
                       padding: 7px 12px 4px;
                       background-color:rgba(255,255,255,.15);
@@ -197,12 +197,12 @@
             $('.grid-item').click(function() {
                 if (clickCounter <= 4) {
                     var dataValue = $(this).data('position');
-                    if ($(this).find('.number').length > 0) {
-                        $('.grid-item').children('.number').remove();
-                        $(this).append('<div class="number" style="font-size:30px;color:red;">1</div>');
+                    if ($(this).find('.number-cs').length > 0) {
+                        $('.grid-item').children('.number-cs').remove();
+                        $(this).append('<div class="number-cs bigEntrance">1</div>');
                         clickCounter = 2;
                     }else{
-                        $(this).append('<div class="number" style="font-size:30px;color:red;">' + clickCounter + '</div>');
+                        $(this).append('<div class="number-cs bigEntrance">' + clickCounter + '</div>');
                         if(clickCounter==4){
                             $('#icon-cash').addClass('expandOpen');
                         }
