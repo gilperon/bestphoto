@@ -74,7 +74,7 @@
                       letter-spacing: 1px;
                       margin-left: -10px;
                       padding-left: 17px;
-                    ">
+                    " id="balance">
                     0.00
                   </span>
                 </h6>
@@ -205,6 +205,11 @@
                         $(this).append('<div class="number-cs expandOpen">' + clickCounter + '</div>');
                         if(clickCounter==4){
                             $('#icon-cash').addClass('hatch');
+                             // Get the current balance as a string
+                            let currentBalance = $('#balance').text();
+                            let balanceNumber = parseFloat(currentBalance);
+                            balanceNumber += 0.01;
+                            $('#balance').text(balanceNumber.toFixed(3));
                         }
                         clickCounter++;
                     }
