@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap">
 
   <!--Carousel-->
-  <script src="https://cdn.jsdelivr.net/npm/keen-slider@6.8.5/keen-slider.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/keen-slider@6.8.5/keen-slider.min.js"></script> -->
 
   <meta name="theme-color" content="#181A20">
 
@@ -18,7 +18,7 @@
   <link href="assets/css/base.css" rel="stylesheet">
   <script src="assets/js/scripts.js"></script>
 </head>
-<body  data-bs-toggle="modal" data-bs-target="#exampleModal">
+<body>
 
     <div class="tollbar tollbar-logged">
         <div class="header">
@@ -119,11 +119,11 @@
               ">
               <i style="font-style: normal;vertical-align: 1px;">🔥</i> <span style="font-weight:600;font-family: var(--ff-graphik);font-size: 15px;">Click</span> on the photos to rank from 1 to 4
             </div>
-            <div class="grid" id="sortable-grid">
-                <div class="grid-item pic1" data-value="Item 1"></div>
-                <div class="grid-item pic2" data-value="Item 2"></div>
-                <div class="grid-item pic3" data-value="Item 3"></div>
-                <div class="grid-item pic4" data-value="Item 4"></div>
+            <div class="grid">
+                <div class="grid-item pic1" data-position="1"></div>
+                <div class="grid-item pic2" data-position="2"></div>
+                <div class="grid-item pic3" data-position="3"></div>
+                <div class="grid-item pic4" data-position="4"></div>
               </div>
 
               <div style="
@@ -189,27 +189,27 @@
       </div>
     </div>
 
-    <!-- Button trigger modal -->
-    
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-            ...
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-        </div>
-    </div>
 
+
+    <script>
+        $(document).ready(function() {
+            let clickCounter = 1;
+            $('.grid-item').click(function() {
+                if (clickCounter <= 4) {
+                    var dataValue = $(this).data('position');
+                    if ($(this).find('.number').length > 0) {
+                        $('.grid-item').children('.number').remove();
+                        $(this).append('<div class="number" style="font-size:30px;color:red;">1</div>');
+                        clickCounter = 2;
+                    }else{
+                        $(this).append('<div class="number" style="font-size:30px;color:red;">' + clickCounter + '</div>');
+                        clickCounter++;
+                    }
+                }
+            });
+        });
+        </script>
 
 </body>
+
 </html>
