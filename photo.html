@@ -75,7 +75,7 @@
                       margin-left: -10px;
                       padding-left: 17px;
                     " id="balance">
-                    0.00
+                    0.010
                   </span>
                 </h6>
               </div>
@@ -208,7 +208,7 @@
                              // Get the current balance as a string
                             let currentBalance = $('#balance').text();
                             let balanceNumber = parseFloat(currentBalance);
-                            balanceNumber += 0.01;
+                            balanceNumber += 0.001;
                             $('#balance').text(balanceNumber.toFixed(3));
                         }
                         clickCounter++;
