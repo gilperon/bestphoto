@@ -468,7 +468,9 @@ h1, h2, h3, span, p {
   font-weight: 200;
 }
 .content .action-v3 {
-  padding: 0 10px;
+  margin: -20px 0;
+  padding: 10px;
+  background: #f2f2f2;
 }
 .content .action-v3 h1 {
   font-family: var(--ff-graphik);
