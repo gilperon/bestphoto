@@ -580,3 +580,54 @@ h1, h2, h3, span, p {
   background-size: cover;
   /* transition: transform 0.3s ease; */
 }
+
+.grid-item:nth-child(1)::before {
+  content: "";
+  position: absolute;
+  background: url("../img/rank-1.png");
+  left: 10px;
+  top: -16px;
+  background-size: cover;
+  width: 32px;
+  height: 32px;
+  filter: hue-rotate(300deg);
+}
+
+.grid-item:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  background: url("../img/images/rank-2.png");
+  left: 10px;
+  top: -16px;
+  background-size: cover;
+  width: 32px;
+  height: 32px;
+  filter: hue-rotate(300deg);
+  filter: hue-rotate(122deg);
+}
+
+.grid-item:nth-child(3)::before {
+  content: "";
+  position: absolute;
+  background: url("../img/images/rank-3.png");
+  left: 10px;
+  bottom: -16px;
+  background-size: cover;
+  width: 32px;
+  height: 32px;
+  filter: hue-rotate(300deg);
+  filter: hue-rotate(122deg);
+}
+
+.grid-item:nth-child(4)::before {
+  content: "";
+  position: absolute;
+  background: url("../img/images/rank-4.png");
+  left: 10px;
+  bottom: -16px;
+  background-size: cover;
+  width: 32px;
+  height: 32px;
+  filter: hue-rotate(300deg);
+  filter: hue-rotate(122deg);
+}
