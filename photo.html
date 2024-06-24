@@ -130,10 +130,10 @@
                 <div class="grid-item pic4" data-position="4"></div>
               </div>
               <div class="grid" id="slide-2" style="display:none;">
-                <div class="grid-item pic4" data-position="4"></div>
-                <div class="grid-item pic1" data-position="1"></div>
-                <div class="grid-item pic2" data-position="2"></div>
-                <div class="grid-item pic3" data-position="3"></div>
+                <div class="grid-item pic4" data-position="4" style="background-image:url('https://images-ssl.gotinder.com/64a8bdb38600a20100980bb5/640x800_75_188048f1-b971-414a-92eb-b28fcc39a658.webp')"></div>
+                <div class="grid-item pic1" data-position="1" style="background-image:url('https://images-ssl.gotinder.com/64a8bdb38600a20100980bb5/640x800_75_483c4c49-37aa-4869-a587-cde0718c89e6.webp')"></div>
+                <div class="grid-item pic2" data-position="2" style="background-image:url('https://images-ssl.gotinder.com/64a8bdb38600a20100980bb5/640x800_75_3dd0ce9d-575b-4da1-8d1f-9386c7810972.webp')"></div>
+                <div class="grid-item pic3" data-position="3" style="background-image:url('https://images-ssl.gotinder.com/64a8bdb38600a20100980bb5/640x800_75_2871910b-9bdd-40c5-88fc-1cd969d9ecaf.webp')"></div>
               </div>
               <div class="grid" id="slide-3" style="display:none;">
                 <div class="grid-item pic4" data-position="4"></div>
@@ -234,7 +234,7 @@
                             setTimeout(function() {
                                 
                                 $(`#slide-${$slide}`).hide();
-                                $(`#slide-${$slide+1}`).addClass('slideLeft').show();
+                                $(`#slide-${$slide+1}`).addClass('pullUp').show();
                                 $('.grid-item').children('.number-cs').remove();
                                 $slide++;
                             }, 1000); 
