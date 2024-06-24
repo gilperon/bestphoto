@@ -199,12 +199,12 @@
                     var dataValue = $(this).data('position');
                     if ($(this).find('.number-cs').length > 0) {
                         $('.grid-item').children('.number-cs').remove();
-                        $(this).append('<div class="number-cs bigEntrance">1</div>');
+                        $(this).append('<div class="number-cs expandOpen">1</div>');
                         clickCounter = 2;
                     }else{
-                        $(this).append('<div class="number-cs bigEntrance">' + clickCounter + '</div>');
+                        $(this).append('<div class="number-cs expandOpen">' + clickCounter + '</div>');
                         if(clickCounter==4){
-                            $('#icon-cash').addClass('expandOpen');
+                            $('#icon-cash').addClass('slideDown');
                         }
                         clickCounter++;
                     }
