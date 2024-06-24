@@ -104,7 +104,7 @@
         <!--Section Account-->
         <section class="action-v3">
 
-            <div style="position: absolute; top: 46%; right: -20px; display: flex; justify-content: center; align-items: center; padding-top: 2px; background: #f2f2f2; width: 50px; height: 50px; z-index: 999; border-radius: 50px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16" style="fill: #555;margin-left: -15px;">
+            <div id="next-slide" style="position: absolute; top: 46%; right: -20px; display: flex; justify-content: center; align-items: center; padding-top: 2px; background: #f2f2f2; width: 50px; height: 50px; z-index: 999; border-radius: 50px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16" style="fill: #555;margin-left: -15px;">
                     <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"></path>
                 </svg></div>
 
@@ -244,6 +244,13 @@
                         clickCounter++;
                     }
                 }
+            });
+            $('#next-slide').click(function() {
+                $(`#slide-${$slide}`).hide();
+                $(`#slide-${$slide+1}`).addClass('pullUp').show();
+                $('.grid-item').children('.number-cs').remove();
+                $slide++;
+                clickCounter = 1;
             });
         });
         </script>
