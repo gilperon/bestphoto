@@ -56,6 +56,18 @@ h1,h2,h3,span,p{
     background:linear-gradient(180deg, #ff4586 0%, #f2295b 100%);
     background:#181A20;
     padding:15px;
+    position: relative;
+    &::before{
+        content: "";
+        height: 100%;
+        width: 60%;
+        background: #f2295b;
+        position: absolute;
+        top: 0;
+        left: -20px;
+        transform: skew(-25deg);
+        z-index:-1px;
+    }
     .right-icons{display:none !important;}
    }
 
