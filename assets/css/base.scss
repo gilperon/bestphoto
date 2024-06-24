@@ -661,47 +661,54 @@ h1,h2,h3,span,p{
     position: absolute;
     background: url("../img/rank-1.png");
     left: 10px;
-    top: -16px;
+    top: 10px;
     background-size: cover;
     width: 32px;
     height: 32px;
-    filter: hue-rotate(300deg);
+    opacity: .9;
+   // filter: hue-rotate(300deg);
+   filter:hue-rotate(122deg) drop-shadow(1px 4px 2px #222);
+    
   }
 
   .grid-item:nth-child(2)::before {
     content: "";
     position: absolute;
-    background: url("../img/images/rank-2.png");
-    left: 10px;
-    top: -16px;
+    opacity: .9;
+    background: url("../img/rank-2.png");
+    top: 10px;
+    right: 10px;
     background-size: cover;
     width: 32px;
     height: 32px;
     filter: hue-rotate(300deg);
     filter: hue-rotate(122deg);
+    filter:hue-rotate(122deg) drop-shadow(1px 4px 2px #222);
   }
 
   .grid-item:nth-child(3)::before {
     content: "";
     position: absolute;
-    background: url("../img/images/rank-3.png");
+    background: url("../img/rank-3.png");
+    bottom: 10px;
     left: 10px;
-    bottom: -16px;
     background-size: cover;
     width: 32px;
     height: 32px;
     filter: hue-rotate(300deg);
     filter: hue-rotate(122deg);
+   filter:hue-rotate(122deg) drop-shadow(1px 4px 2px #222);
   }
   .grid-item:nth-child(4)::before {
     content: "";
     position: absolute;
-    background: url("../img/images/rank-4.png");
-    left: 10px;
-    bottom: -16px;
+    background: url("../img/rank-4.png");
+    bottom: 10px;
+    right: 10px;
     background-size: cover;
     width: 32px;
     height: 32px;
     filter: hue-rotate(300deg);
     filter: hue-rotate(122deg);
+   filter:hue-rotate(122deg) drop-shadow(1px 4px 2px #222);
   }
