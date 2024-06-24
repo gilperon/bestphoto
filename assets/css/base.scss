@@ -52,10 +52,10 @@ h1,h2,h3,span,p{
    // background:linear-gradient(180deg, #ff4586 0%, #f2295b 100%);
 
    &.tollbar-logged{
-    height:30px;
-    background:linear-gradient(180deg, #ff4586 0%, #f2295b 100%);
-    background:#181A20;
-    padding:15px;
+    height: auto;
+    background: linear-gradient(180deg, #ff4586 0%, #f2295b 100%);
+    background: #181A20;
+    padding: 11px 15px 11px;
     position: relative;
     &::before{
         content: "";

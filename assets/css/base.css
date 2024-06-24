@@ -69,10 +69,10 @@ h1, h2, h3, span, p {
   box-sizing: initial;
 }
 .tollbar.tollbar-logged {
-  height: 30px;
+  height: auto;
   background: linear-gradient(180deg, #ff4586 0%, #f2295b 100%);
   background: #181A20;
-  padding: 15px;
+  padding: 11px 15px 11px;
   position: relative;
 }
 .tollbar.tollbar-logged::before {
