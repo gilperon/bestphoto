@@ -74,7 +74,6 @@ h1, h2, h3, span, p {
   background: #181A20;
   padding: 11px 15px 11px;
   position: relative;
-  background: linear-gradient(180deg, #2B3139 0%, #181A20 100%);
 }
 .tollbar.tollbar-logged::before {
   content: "";
