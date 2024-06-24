@@ -61,13 +61,13 @@ h1,h2,h3,span,p{
     &::before{
         content: "";
         height: 100%;
-        width: 70%;
+        width: 68%;
         //background: linear-gradient(180deg, #ff4586 0%, #f2295b 100%);
         background:#111;
         position: absolute;
         top: 0;
         left: -20px;
-        transform: skew(-20deg);
+        transform: skew(20deg);
         z-index:-1px;
     }
     .right-icons{display:none !important;}

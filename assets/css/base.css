@@ -78,12 +78,12 @@ h1, h2, h3, span, p {
 .tollbar.tollbar-logged::before {
   content: "";
   height: 100%;
-  width: 70%;
+  width: 68%;
   background: #111;
   position: absolute;
   top: 0;
   left: -20px;
-  transform: skew(-20deg);
+  transform: skew(20deg);
   z-index: -1px;
 }
 .tollbar.tollbar-logged .right-icons {
