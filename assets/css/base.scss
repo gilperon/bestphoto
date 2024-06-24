@@ -639,12 +639,12 @@ h1,h2,h3,span,p{
 
   .grid-nav {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     width: 100%;
-    background: #f41d91;
-    padding-top: 10px;
-    svg{fill:rgba(255,255,255,.9)!important;}
+    background: #fff;
+    padding-top: 15px;
+    svg{fill:#7c8591 important;}
   }
   .grid-nav-item {
     text-align: center;
