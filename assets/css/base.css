@@ -79,6 +79,7 @@ h1, h2, h3, span, p {
   content: "";
   height: 100%;
   width: 45%;
+  background: #000;
   position: absolute;
   top: 0;
   left: -20px;
