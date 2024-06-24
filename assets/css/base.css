@@ -599,6 +599,58 @@ h1, h2, h3, span, p {
   padding-top: 2px;
 }
 
+.slideSmoothRight {
+  animation-name: slideSmoothRight;
+  -webkit-animation-name: slideSmoothRight;
+  animation-duration: 0.5s;
+  -webkit-animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+  visibility: visible !important;
+}
+
+@keyframes slideSmoothRight {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@-webkit-keyframes slideSmoothRight {
+  0% {
+    -webkit-transform: translateX(-150%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+  }
+}
+.slideSmoothLeft {
+  animation-name: slideSmoothLeft;
+  -webkit-animation-name: slideSmoothLeft;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+  visibility: visible !important;
+}
+
+@keyframes slideSmoothLeft {
+  0% {
+    transform: translateX(150%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@-webkit-keyframes slideSmoothLeft {
+  0% {
+    -webkit-transform: translateX(150%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+  }
+}
 /*
 ==============================================
 CSS3 ANIMATION CHEAT SHEET

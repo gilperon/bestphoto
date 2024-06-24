@@ -234,10 +234,10 @@
                             setTimeout(function() {
                                 
                                 $(`#slide-${$slide}`).hide();
-                                $(`#slide-${$slide+1}`).addClass('pullUp').show();
+                                $(`#slide-${$slide+1}`).addClass('slideSmoothRight').show();
                                 $('.grid-item').children('.number-cs').remove();
                                 $slide++;
-                            }, 1000); 
+                            }, 600); 
                             clickCounter = 1;
                             return;
                         }
@@ -247,7 +247,7 @@
             });
             $('#next-slide').click(function() {
                 $(`#slide-${$slide}`).hide();
-                $(`#slide-${$slide+1}`).addClass('pullUp').show();
+                $(`#slide-${$slide+1}`).addClass('slideSmoothRight').show();
                 $('.grid-item').children('.number-cs').remove();
                 $slide++;
                 clickCounter = 1;
