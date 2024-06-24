@@ -61,9 +61,9 @@ h1,h2,h3,span,p{
     &::before{
         content: "";
         height: 100%;
-        width: 45%;
+        width: 50%;
         //background: linear-gradient(180deg, #ff4586 0%, #f2295b 100%);
-        background:#000;
+        background:#111;
         position: absolute;
         top: 0;
         left: -20px;
