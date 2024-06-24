@@ -717,11 +717,11 @@ h1,h2,h3,span,p{
 
 
 .number-cs{
-    background: rgba(239, 31, 146, .8);
+    background: rgba(239, 31, 146, 0.8);
     color: #fff;
     font-weight: 600;
     font-family: var(--ff-graphik);
-    font-size: 15px;
+    font-size: 16px;
     width: 30px;
     height: 30px;
     border-radius: 5px;
@@ -730,6 +730,7 @@ h1,h2,h3,span,p{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 2px;
 }
 
 
