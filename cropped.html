@@ -82,6 +82,8 @@
       $('#modal').on('shown.bs.modal', function () {
         cropper = new Cropper(image, {
           autoCropArea: 0.5,
+          cropBoxResizable: false, // Impede a criação de uma nova área de recorte
+          dragMode: false,
           ready: function () {
             // Should set crop box data first here
             cropper.setCropBoxData(cropBoxData).setCanvasData(canvasData);
