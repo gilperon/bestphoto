@@ -125,12 +125,20 @@
 
   <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasBottomLabel">Offcanvas bottom</h5>
+      <!-- <h5 class="offcanvas-title" id="offcanvasBottomLabel">Offcanvas bottom</h5> -->
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body small">
-      <h1 class="options-remove-photo">remove photo</h1>
-      <h2 class="options-select-photo">select an new photo</h2>
+          <div class="options-select-photo">
+            <div class="btn btn-sm bg-primary d-flex gap-2 p-2 justify-content-center align-items-center rounded-5 mb-3" style="border: 1px solid #fff;color:#fff;width: fit-content;">
+              Select an new photo
+            </div>
+          </div>
+          <div class="options-remove-photo">
+            <div class="btn btn-sm bg-secondary d-flex gap-2 p-2 justify-content-center align-items-center rounded-5 mb-3" style="border: 1px solid #fff;color:#fff;width: fit-content;">
+              Delete this photo
+            </div>
+          </div>
     </div>
   </div>
 
