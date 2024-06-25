@@ -121,6 +121,18 @@ $(document).ready(function () {
   $("#imgInp").on("change", function () {
     var input = this;
     if (input.files && input.files[0]) {
+      // Check if the selected file is an image
+      if (!input.files[0].type.startsWith("image/")) {
+        toastr.error("Please submit an valid image.", "", {
+          positionClass: "toast-top-center",
+          closeButton: true,
+          timeOut: 5000,
+          toastClass: "custom-toast-background pullDown",
+        });
+        $("#imgInp").val(""); // Clear the file input
+        return;
+      }
+
       var reader = new FileReader();
       reader.onload = function (e) {
         $("#my-image").attr("src", e.target.result);
