@@ -2044,7 +2044,7 @@ h1, h2, h3, span, p {
 #imageModal .modal-dialog > .modal-content {
   border: 0;
   border-radius: 0;
-  height: 100vh;
+  height: 100dvh;
 }
 #imageModal .modal-dialog .modal-footer {
   background: #f2295b;
