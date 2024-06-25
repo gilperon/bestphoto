@@ -123,7 +123,7 @@ $(document).ready(function () {
     if (input.files && input.files[0]) {
       // Check if the selected file is an image
       if (!input.files[0].type.startsWith("image/")) {
-        toastr.error("Please submit an valid image.", "", {
+        toastr.error("Please insert a valid image.", "", {
           positionClass: "toast-top-center",
           closeButton: true,
           timeOut: 5000,
