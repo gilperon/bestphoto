@@ -50,7 +50,13 @@ $(document).ready(function () {
         );
 
         if (clickCounter == 4) {
-          $("#icon-cash").addClass("hatch");
+          $(".wrap-cash")
+            .addClass("expandMini")
+            .delay(500)
+            .queue(function (next) {
+              $(this).removeClass("expandMini");
+              next();
+            });
           let currentBalance = $("#balance").text();
           let balanceNumber = parseFloat(currentBalance);
           balanceNumber += 0.001;
