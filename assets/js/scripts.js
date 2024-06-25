@@ -76,94 +76,98 @@ $(document).ready(function () {
   });
 });
 
-// Page discover
+// Page discover (crop image)
 $(document).ready(function () {
-  var $currentGridItem;
-  var imageDataUrl;
-  var cropper;
+  var resize;
+  var currentGridItem;
 
   $(".grid-add-item").on("click", function () {
-    $currentGridItem = $(this);
-    $("#file-upload").click();
+    currentGridItem = $(this); // Salva o item de grid atual
+
+    var dataValue = currentGridItem.attr("data-value");
+
+    if (dataValue === "true") {
+      $("#offcanvasBottom").offcanvas("show");
+    } else {
+      $("#imgInp").val("").click(); // Limpa o valor atual e aciona o input de arquivo para selecionar uma imagem
+    }
   });
 
-  $("#file-upload").on("change", function (event) {
-    var file = event.target.files[0];
-    if (file) {
+  // Offcanvas options click events
+  $("#offcanvasBottom").on("click", ".options-remove-photo", function () {
+    // Perform remove action here
+    currentGridItem.css("background-image", ""); // Remove background image
+    currentGridItem.attr("data-value", "empty"); // Reset data-value attribute
+    currentGridItem.find(".icon-plus").show(); // Show the icon-plus element
+    $("#offcanvasBottom").offcanvas("hide"); // Hide offcanvas
+  });
+
+  $("#offcanvasBottom").on("click", ".options-select-photo", function () {
+    $("#imgInp").val("").click(); // Limpa o valor atual e aciona o input de arquivo para selecionar uma nova imagem
+    $("#offcanvasBottom").offcanvas("hide"); // Hide offcanvas
+  });
+
+  $("#imgInp").on("change", function () {
+    var input = this;
+    if (input.files && input.files[0]) {
       var reader = new FileReader();
       reader.onload = function (e) {
-        imageDataUrl = e.target.result;
-        $("#uploaded-photo").attr("src", imageDataUrl);
-
-        var myModal = new bootstrap.Modal(
-          document.getElementById("photoModal"),
-          {
-            keyboard: false,
-          }
-        );
-        myModal.show();
-
-        myModal._element.addEventListener("shown.bs.modal", function () {
-          cropper = new Cropper(document.getElementById("uploaded-photo"), {
-            aspectRatio: 1,
-            viewMode: 1, // Ensure the cropped area respects container's boundaries
-            autoCropArea: 0.8, // 80% of the visible area
-            movable: true,
-            zoomable: true,
-            rotatable: true,
-            scalable: true,
-          });
-        });
+        $("#my-image").attr("src", e.target.result);
+        $("#imageModal").modal("show"); // Show the modal first
+        initializeCroppie(); // Initialize Croppie after modal is shown
       };
-      reader.readAsDataURL(file);
+      reader.readAsDataURL(input.files[0]);
     }
   });
 
-  $("#save-button").on("click", function () {
-    if (cropper) {
-      var croppedCanvas = cropper.getCroppedCanvas({
-        width: 100,
-        height: 100,
+  // Function to initialize Croppie
+  function initializeCroppie() {
+    if (!resize) {
+      resize = new Croppie(document.getElementById("croppie-container"), {
+        viewport: {
+          width: 200,
+          height: 240,
+          type: "square",
+        },
+        boundary: {
+          width: 300,
+          height: 300,
+        },
       });
-
-      var croppedImageDataUrl = croppedCanvas.toDataURL("image/png");
-      $currentGridItem.css({
-        "background-image": "url(" + croppedImageDataUrl + ")",
-        "background-position":
-          -cropper.getData().x + "px " + -cropper.getData().y + "px",
+    } else {
+      // If Croppie instance already exists, re-bind to update dimensions
+      resize.bind({
+        url: $("#my-image").attr("src"),
       });
-      $currentGridItem.find(".icon-plus").hide();
-
-      var myModalEl = document.getElementById("photoModal");
-      var modal = bootstrap.Modal.getInstance(myModalEl);
-      modal.hide();
-
-      cropper.destroy();
-      cropper = null;
     }
+  }
+
+  // Save button click event
+  $("#saveCrop").on("click", function () {
+    resize
+      .result({
+        type: "base64",
+        size: "viewport",
+      })
+      .then(function (dataImg) {
+        var originalBase64 = $("#my-image").attr("src");
+        console.log(originalBase64); // imagem original
+        console.log(dataImg); // imagem cortada
+        currentGridItem.css("background-image", "url(" + dataImg + ")");
+        currentGridItem.attr("data-value", "true"); // Update the data-value attribute to true
+        currentGridItem.find(".icon-plus").hide(); // Hide the icon-plus element
+        $("#imageModal").modal("hide");
+      });
   });
 
-  $("#photoModal").on("hidden.bs.modal", function () {
-    if (cropper) {
-      cropper.destroy();
-      cropper = null;
-    }
+  // Prevent modal close on backdrop click
+  $("#imageModal").modal({
+    backdrop: "static",
+    keyboard: false,
+  });
+
+  // Re-bind Croppie on modal show
+  $("#imageModal").on("shown.bs.modal", function () {
+    initializeCroppie();
   });
 });
-// $(document).ready(function () {
-//   $(".grid-add-item").on("click", function () {
-//     $("#file-upload").click();
-//   });
-
-//   $("#file-upload").on("change", function (event) {
-//     var reader = new FileReader();
-//     reader.onload = function (e) {
-//       $("#uploaded-photo").attr("src", e.target.result);
-//       var photoModal = new bootstrap.Modal(
-//         document.getElementById("photoModal")
-//       );
-//       photoModal.show();
-//     };
-//     reader.readAsDataURL(event.target.files[0]);
-//   });
-// });
