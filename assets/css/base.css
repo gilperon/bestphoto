@@ -2038,7 +2038,7 @@ h1, h2, h3, span, p {
 }
 
 #offcanvasBottom {
-  height: 25vh;
+  height: 24vh;
 }
 #offcanvasBottom .offcanvas-header {
   visibility: hidden;
@@ -2048,7 +2048,8 @@ h1, h2, h3, span, p {
   font-size: 18px;
   color: rgb(35, 35, 35);
   font-weight: 600;
-  margin-bottom: 22px;
+  margin-top: -10px;
+  margin-bottom: 34px;
   margin-left: 10px;
 }
 
