@@ -2048,9 +2048,9 @@ h1, h2, h3, span, p {
   font-size: 18px;
   color: rgb(35, 35, 35);
   font-weight: 600;
-  margin-top: -10px;
-  margin-bottom: 34px;
-  margin-left: 10px;
+  margin-top: -12px;
+  margin-bottom: 40px;
+  margin-left: 14px;
 }
 
 #imageModal .modal-dialog {
