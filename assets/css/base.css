@@ -2037,6 +2037,21 @@ h1, h2, h3, span, p {
   opacity: 0.2;
 }
 
+#offcanvasBottom {
+  height: 25vh;
+}
+#offcanvasBottom .offcanvas-header {
+  visibility: hidden;
+}
+#offcanvasBottom h3 {
+  font-family: var(--ff-graphik);
+  font-size: 18px;
+  color: rgb(35, 35, 35);
+  font-weight: 600;
+  margin-bottom: 22px;
+  margin-left: 10px;
+}
+
 #imageModal .modal-dialog {
   border: 0;
   margin: 0;

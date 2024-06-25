@@ -815,6 +815,21 @@ h1,h2,h3,span,p{
 }
 
 
+//offcanvas crop page
+#offcanvasBottom{
+    height:25vh;
+    .offcanvas-header{
+        visibility: hidden;
+    }
+    h3{
+        font-family: var(--ff-graphik);
+        font-size: 18px;
+        color: rgb(35, 35, 35);
+        font-weight: 600;
+        margin-bottom: 22px;
+        margin-left: 10px;
+    }
+}
 
 //Modal crop image
 #imageModal {
