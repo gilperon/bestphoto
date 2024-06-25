@@ -1388,11 +1388,12 @@ h1, h2, h3, span, p {
 }
 .wrap-tollbar-small-inside .wrap-title svg.back-arrow {
   margin-right: 10px;
-  width: 14px;
-  height: 14px;
+  width: 13px;
+  height: 13px;
   fill: #eee;
   z-index: 1;
-  cursor: pointer;
+  margin-top: -2px;
+  cursor: pointer !important;
 }
 .wrap-tollbar-small-inside .wrap-cash {
   display: flex;
@@ -1817,7 +1818,12 @@ h1, h2, h3, span, p {
   font-style: normal;
   vertical-align: 1px;
 }
-.content .section-rate-photo .wrap-title span:not(.icon-fire) {
+.content .section-rate-photo .wrap-title span.text-bold {
+  font-weight: 600;
+  font-family: var(--ff-graphik);
+  font-size: 15px;
+}
+.content .section-rate-photo .wrap-title span:not(.icon-fire):not(.text-bold) {
   color: #21262e;
   font-size: 15px;
   font-family: var(--ff-graphik);
@@ -1891,7 +1897,12 @@ h1, h2, h3, span, p {
   font-style: normal;
   vertical-align: 1px;
 }
-.content .section-add-photo .wrap-title span:not(.icon-fire) {
+.content .section-add-photo .wrap-title span.text-bold {
+  font-weight: 600;
+  font-family: var(--ff-graphik);
+  font-size: 15px;
+}
+.content .section-add-photo .wrap-title span:not(.icon-fire):not(.text-bold) {
   color: #21262e;
   font-size: 15px;
   font-family: var(--ff-graphik);

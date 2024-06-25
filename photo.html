@@ -74,7 +74,7 @@
 
             <div class="wrap-title">
               <span class="icon-fire">🔥</span>
-              <span style="font-weight:600;font-family: var(--ff-graphik);font-size: 15px;">Click</span> <span>on the photos to rank from 1 to 4</span>
+              <span class="text-bold">Click</span> <span>on the photos to rank from 1 to 4</span>
             </div>
             <!--Grid Photos-->
               <div class="grid-photos" id="slide-1">
@@ -90,10 +90,16 @@
                 <div class="grid-photos-item" data-position="3" style="background-image:url('https://images-ssl.gotinder.com/64a8bdb38600a20100980bb5/640x800_75_2871910b-9bdd-40c5-88fc-1cd969d9ecaf.webp')"></div>
               </div>
               <div class="grid-photos" id="slide-3" style="display:none;">
-                <div class="grid-photos-item" data-position="4"></div>
-                <div class="grid-photos-item" data-position="1"></div>
-                <div class="grid-photos-item" data-position="2"></div>
-                <div class="grid-photos-item" data-position="3"></div>
+                <div class="grid-photos-item" data-position="1" style="background-image:url(https://i.ibb.co/tq2G6wn/image.png)"></div>
+                <div class="grid-photos-item" data-position="2" style="background-image:url(https://i.ibb.co/fYpy3vX/image.png)"></div>
+                <div class="grid-photos-item" data-position="3" style="background-image:url(https://i.ibb.co/DY32HnM/image-z-Tcmzim3r-transformed.png)"></div>
+                <div class="grid-photos-item" data-position="4" style="background-image:url(https://i.ibb.co/QMQdYD8/image.png)"></div>
+              </div>
+              <div class="grid-photos" id="slide-4" style="display:none;">
+                <div class="grid-photos-item" data-position="4" style="background-image:url('https://images-ssl.gotinder.com/64a8bdb38600a20100980bb5/640x800_75_188048f1-b971-414a-92eb-b28fcc39a658.webp')"></div>
+                <div class="grid-photos-item" data-position="1" style="background-image:url('https://images-ssl.gotinder.com/64a8bdb38600a20100980bb5/640x800_75_483c4c49-37aa-4869-a587-cde0718c89e6.webp')"></div>
+                <div class="grid-photos-item" data-position="2" style="background-image:url('https://images-ssl.gotinder.com/64a8bdb38600a20100980bb5/640x800_75_3dd0ce9d-575b-4da1-8d1f-9386c7810972.webp')"></div>
+                <div class="grid-photos-item" data-position="3" style="background-image:url('https://images-ssl.gotinder.com/64a8bdb38600a20100980bb5/640x800_75_2871910b-9bdd-40c5-88fc-1cd969d9ecaf.webp')"></div>
               </div>
             <!--Next Slide-->
             <div id="next-slide">
@@ -106,54 +112,5 @@
 
     </div>
 
-
-    <script>
-        $(document).ready(function() {
-            let clickCounter = 1;
-            $slide = 1;
-            $('.grid-photos-item').click(function() {
-                if (clickCounter <= 4) {
-                    var dataValue = $(this).data('position');
-                    if ($(this).find('.ranked-number').length > 0) {
-                        $('.grid-photos-item').children('.ranked-number').remove();
-                        $(this).append('<div class="ranked-number expandOpen">1</div>');
-                        clickCounter = 2;
-                    }else{
-                        $(this).append('<div class="ranked-number expandOpen">' + clickCounter + '</div>');
-                        if(clickCounter==4){
-                            $('#icon-cash').addClass('hatch');
-                             // Get the current balance as a string
-                            let currentBalance = $('#balance').text();
-                            let balanceNumber = parseFloat(currentBalance);
-                            balanceNumber += 0.001;
-                            $('#balance').text(balanceNumber.toFixed(3));
-                            // $('#first-div').hide();
-                            // $('#second-div').addClass('slideLeft').show();
-                            // $('.grid-photos-item').children('.ranked-number').remove();
-                            setTimeout(function() {
-                                
-                                $(`#slide-${$slide}`).hide();
-                                $(`#slide-${$slide+1}`).addClass('slideSmoothRight').show();
-                                $('.grid-photos-item').children('.ranked-number').remove();
-                                $slide++;
-                            }, 600); 
-                            clickCounter = 1;
-                            return;
-                        }
-                        clickCounter++;
-                    }
-                }
-            });
-            $('#next-slide').click(function() {
-                $(`#slide-${$slide}`).hide();
-                $(`#slide-${$slide+1}`).addClass('slideSmoothRight').show();
-                $('.grid-photos-item').children('.ranked-number').remove();
-                $slide++;
-                clickCounter = 1;
-            });
-        });
-        </script>
-
 </body>
-
 </html>

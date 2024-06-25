@@ -74,7 +74,7 @@
 
             <div class="wrap-title">
               <span class="icon-fire">🔥</span>
-              <span style="font-weight:600;font-family: var(--ff-graphik);font-size: 15px;">Do you know your best photo?</span> <span>Find out now!</span>
+              <span class="text-bold">Do you know your best photo?</span> <span>Find out now!</span>
             </div>
             <!--Grid Add Photos-->
               <div class="grid-photos" id="slide-1">
@@ -99,54 +99,5 @@
         <!--End Discover-->
     </div>
 
-
-    <script>
-      $(document).ready(function() {
-          let clickCounter = 1;
-          $slide = 1;
-          $('.grid-photos-item').click(function() {
-              if (clickCounter <= 4) {
-                  var dataValue = $(this).data('position');
-                  if ($(this).find('.ranked-number').length > 0) {
-                      $('.grid-photos-item').children('.ranked-number').remove();
-                      $(this).append('<div class="ranked-number expandOpen">1</div>');
-                      clickCounter = 2;
-                  }else{
-                      $(this).append('<div class="ranked-number expandOpen">' + clickCounter + '</div>');
-                      if(clickCounter==4){
-                          $('#icon-cash').addClass('hatch');
-                           // Get the current balance as a string
-                          let currentBalance = $('#balance').text();
-                          let balanceNumber = parseFloat(currentBalance);
-                          balanceNumber += 0.001;
-                          $('#balance').text(balanceNumber.toFixed(3));
-                          // $('#first-div').hide();
-                          // $('#second-div').addClass('slideLeft').show();
-                          // $('.grid-photos-item').children('.ranked-number').remove();
-                          setTimeout(function() {
-                              
-                              $(`#slide-${$slide}`).hide();
-                              $(`#slide-${$slide+1}`).addClass('slideSmoothRight').show();
-                              $('.grid-photos-item').children('.ranked-number').remove();
-                              $slide++;
-                          }, 600); 
-                          clickCounter = 1;
-                          return;
-                      }
-                      clickCounter++;
-                  }
-              }
-          });
-          $('#next-slide').click(function() {
-              $(`#slide-${$slide}`).hide();
-              $(`#slide-${$slide+1}`).addClass('slideSmoothRight').show();
-              $('.grid-photos-item').children('.ranked-number').remove();
-              $slide++;
-              clickCounter = 1;
-          });
-      });
-      </script>
-
 </body>
-
 </html>
