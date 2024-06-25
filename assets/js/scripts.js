@@ -125,7 +125,7 @@ $(document).ready(function () {
       if (!input.files[0].type.startsWith("image/")) {
         toastr.error("Please insert a valid image.", "", {
           positionClass: "toast-top-center",
-          closeButton: true,
+          closeButton: false,
           timeOut: 5000,
           toastClass: "custom-toast-background pullDown",
         });

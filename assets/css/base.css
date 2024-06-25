@@ -2089,3 +2089,6 @@ h1, h2, h3, span, p {
   opacity: 1 !important;
   min-height: 60px;
 }
+.custom-toast-background .toast-message {
+  margin-top: 3px;
+}
