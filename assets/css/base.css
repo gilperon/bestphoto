@@ -2036,3 +2036,31 @@ h1, h2, h3, span, p {
   height: 60px;
   opacity: 0.2;
 }
+
+#imageModal .modal-dialog {
+  border: 0;
+  margin: 0;
+}
+#imageModal .modal-dialog > .modal-content {
+  border: 0;
+  border-radius: 0;
+}
+#imageModal .modal-dialog .modal-footer {
+  background: #f2295b;
+  border-radius: 0;
+}
+#imageModal .modal-dialog .btn-close {
+  outline: 0;
+  box-shadow: none;
+  zoom: 0.85;
+}
+#imageModal .btn-primary {
+  background-color: #f2295b !important;
+  background: #f2295b;
+  color: #fff;
+  border: 0;
+  zoom: 0.9;
+  width: 100%;
+  font-size: 22px;
+  font-weight: 500;
+}
