@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Image Cropping Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.css'>
+  <style>
+    .row {
+      height: 100vh;
+    }
+
+    #my-image {
+      max-width: 100%;
+      max-height: 300px;
+      margin-bottom: 20px;
+    }
+
+    .modal-dialog {
+      /* max-width: 80%;
+      margin: 1.75rem auto; */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <form id="form1" runat="server">
+          <input type='file' id="imgInp" />
+          <img id="my-image" src="#" />
+        </form>
+        <button id="use" class="btn btn-primary">Upload</button>
+        <img id="result" src="" style="display: none;">
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="imageModalLabel">Crop Image</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="croppie-container"></div>
+        </div>
+        <div class="modal-footer">
+          <button id="saveCrop" class="btn btn-primary">Salvar</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      var resize;
+
+      $('#imgInp').on('change', function () {
+        var input = this;
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            $('#my-image').attr('src', e.target.result);
+            $('#imageModal').modal('show'); // Show the modal first
+            initializeCroppie(); // Initialize Croppie after modal is shown
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+      });
+
+      // Function to initialize Croppie
+      function initializeCroppie() {
+        if (!resize) {
+          resize = new Croppie(document.getElementById('croppie-container'), {
+            viewport: {
+              width: 200,
+              height: 200,
+              type: 'square' // 'square' or 'circle'
+            },
+            boundary: {
+              width: 300,
+              height: 300
+            }
+          });
+        } else {
+          // If Croppie instance already exists, re-bind to update dimensions
+          resize.bind({
+            url: $('#my-image').attr('src')
+          });
+        }
+      }
+
+      // Save button click event
+      $('#saveCrop').on('click', function () {
+        resize.result({
+          type: 'base64',
+          size: 'viewport'
+        }).then(function (dataImg) {
+          $('#result').attr('src', dataImg).css('display', 'block');
+          $('#imageModal').modal('hide');
+        });
+      });
+
+      // Re-bind Croppie on modal show
+      $('#imageModal').on('shown.bs.modal', function () {
+        initializeCroppie();
+      });
+    });
+  </script>
+</body>
+
+</html>
