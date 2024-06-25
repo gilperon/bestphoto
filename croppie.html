@@ -138,7 +138,8 @@
   
 
   <script>
-    $(document).ready(function () {
+
+$(document).ready(function () {
   var resize;
   var currentGridItem;
 
@@ -150,14 +151,12 @@
     if (dataValue === 'true') {
       $('#offcanvasBottom').offcanvas('show');
     } else {
-      $('#imgInp').click(); // Aciona o input de arquivo para selecionar uma imagem
+      $('#imgInp').val('').click(); // Limpa o valor atual e aciona o input de arquivo para selecionar uma imagem
     }
   });
 
-
-
-   // Offcanvas options click events
-   $('#offcanvasBottom').on('click', '.options-remove-photo', function () {
+  // Offcanvas options click events
+  $('#offcanvasBottom').on('click', '.options-remove-photo', function () {
     // Perform remove action here
     currentGridItem.css('background-image', ''); // Remove background image
     currentGridItem.attr('data-value', 'empty'); // Reset data-value attribute
@@ -166,16 +165,9 @@
   });
 
   $('#offcanvasBottom').on('click', '.options-select-photo', function () {
-    $('#imgInp').click(); // Trigger file input to select a new image
+    $('#imgInp').val('').click(); // Limpa o valor atual e aciona o input de arquivo para selecionar uma nova imagem
     $('#offcanvasBottom').offcanvas('hide'); // Hide offcanvas
   });
-
-
-
-  // $('.grid-add-item').on('click', function () {
-  //   currentGridItem = $(this); // Save the current grid item
-  //   $('#imgInp').click(); // Trigger the file input
-  // });
 
   $('#imgInp').on('change', function () {
     var input = this;
@@ -239,6 +231,109 @@
     initializeCroppie();
   });
 });
+
+
+//     $(document).ready(function () {
+//   var resize;
+//   var currentGridItem;
+
+//   $('.grid-add-item').on('click', function () {
+//     currentGridItem = $(this); // Salva o item de grid atual
+
+//     var dataValue = currentGridItem.attr('data-value');
+
+//     if (dataValue === 'true') {
+//       $('#offcanvasBottom').offcanvas('show');
+//     } else {
+//       $('#imgInp').click(); // Aciona o input de arquivo para selecionar uma imagem
+//     }
+//   });
+
+
+
+//    // Offcanvas options click events
+//    $('#offcanvasBottom').on('click', '.options-remove-photo', function () {
+//     // Perform remove action here
+//     currentGridItem.css('background-image', ''); // Remove background image
+//     currentGridItem.attr('data-value', 'empty'); // Reset data-value attribute
+//     currentGridItem.find('.icon-plus').show(); // Show the icon-plus element
+//     $('#offcanvasBottom').offcanvas('hide'); // Hide offcanvas
+//   });
+
+//   $('#offcanvasBottom').on('click', '.options-select-photo', function () {
+//     $('#imgInp').click(); // Trigger file input to select a new image
+//     $('#offcanvasBottom').offcanvas('hide'); // Hide offcanvas
+//   });
+
+
+
+//   // $('.grid-add-item').on('click', function () {
+//   //   currentGridItem = $(this); // Save the current grid item
+//   //   $('#imgInp').click(); // Trigger the file input
+//   // });
+
+//   $('#imgInp').on('change', function () {
+//     var input = this;
+//     if (input.files && input.files[0]) {
+//       var reader = new FileReader();
+//       reader.onload = function (e) {
+//         $('#my-image').attr('src', e.target.result);
+//         $('#imageModal').modal('show'); // Show the modal first
+//         initializeCroppie(); // Initialize Croppie after modal is shown
+//       };
+//       reader.readAsDataURL(input.files[0]);
+//     }
+//   });
+
+//   // Function to initialize Croppie
+//   function initializeCroppie() {
+//     if (!resize) {
+//       resize = new Croppie(document.getElementById('croppie-container'), {
+//         viewport: {
+//           width: 200,
+//           height: 240,
+//           type: 'square'
+//         },
+//         boundary: {
+//           width: 300,
+//           height: 300
+//         },
+//       });
+//     } else {
+//       // If Croppie instance already exists, re-bind to update dimensions
+//       resize.bind({
+//         url: $('#my-image').attr('src')
+//       });
+//     }
+//   }
+
+//   // Save button click event
+//   $('#saveCrop').on('click', function () {
+//     resize.result({
+//       type: 'base64',
+//       size: 'viewport'
+//     }).then(function (dataImg) {
+//       var originalBase64 = $('#my-image').attr('src');
+//       console.log(originalBase64); // imagem original
+//       console.log(dataImg); // imagem cortada
+//       currentGridItem.css('background-image', 'url(' + dataImg + ')');
+//       currentGridItem.attr('data-value', 'true'); // Update the data-value attribute to true
+//       currentGridItem.find('.icon-plus').hide(); // Hide the icon-plus element
+//       $('#imageModal').modal('hide');
+//     });
+//   });
+
+//   // Prevent modal close on backdrop click
+//   $('#imageModal').modal({
+//     backdrop: 'static',
+//     keyboard: false
+//   });
+
+//   // Re-bind Croppie on modal show
+//   $('#imageModal').on('shown.bs.modal', function () {
+//     initializeCroppie();
+//   });
+// });
 
   </script>
 </body>
