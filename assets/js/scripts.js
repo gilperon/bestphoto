@@ -117,6 +117,16 @@ $(document).ready(function () {
         initializeCroppie(); // Initialize Croppie after modal is shown
       };
       reader.readAsDataURL(input.files[0]);
+
+      // fix to force zoom to zero
+      setTimeout(function () {
+        var rangeInput = $("#imageModal").find(".cr-slider")[0];
+        if (rangeInput) {
+          rangeInput.value = rangeInput.min;
+          var event = new Event("input", { bubbles: true });
+          rangeInput.dispatchEvent(event);
+        }
+      }, 1000);
     }
   });
 
