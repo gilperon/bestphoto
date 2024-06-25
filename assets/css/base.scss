@@ -802,3 +802,44 @@ h1,h2,h3,span,p{
     }
 
 }
+
+
+
+// .modal-dialog {
+//     max-width: 90%; /* Adjust maximum width of modal dialog */
+//     width: auto !important; /* Ensure modal width adjusts to content */
+// }
+// .modal-body {
+//     text-align: center;
+// }
+
+// #uploaded-photo {
+//     max-width: 100%;
+//     max-height: 100vh; /* Limit image height to viewport height */
+//     margin: auto;
+// }
+
+
+// .modal-dialog {
+//     max-width: 90%; /* Adjust maximum width of modal dialog */
+//     width: auto !important; /* Ensure modal width adjusts to content */
+// }
+// .modal-body {
+//     text-align: center;
+//     max-height: calc(100vh - 210px); /* Adjust modal body max height (minus header + footer height) */
+//     overflow-y: auto; /* Enable vertical scrolling if needed */
+// }
+// #uploaded-photo {
+//     max-width: 100%;
+//     height: auto;
+//     display: block;
+//     margin: auto;
+// }
+
+// .cropper-example-3 {
+// width: 100%;
+// }
+
+// .cropper-example-3 > img {
+// max-width: 100%;
+// }
