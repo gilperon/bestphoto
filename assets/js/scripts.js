@@ -135,7 +135,7 @@ $(document).ready(function () {
     if (!resize) {
       resize = new Croppie(document.getElementById("croppie-container"), {
         viewport: {
-          width: 200,
+          width: 190,
           height: 240,
           type: "square",
         },
