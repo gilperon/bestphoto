@@ -7,13 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.js'></script>
-
-
-  <link href="assets/css/base.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.css'>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.js'></script>
+
+  <link href="assets/css/base.css" rel="stylesheet">
+ 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <style>
     .row {
       height: 100vh;
@@ -26,8 +28,8 @@
     }
 
     .modal-dialog {
-      /* max-width: 80%;
-      margin: 1.75rem auto; */
+      /* max-width: 80%; */
+      /* margin: 1.75rem auto; */
     }
   </style>
 </head>
@@ -46,27 +48,21 @@
     </div>
   </div>
 
-  <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true" data-bs-target="#imageModal" data-bs-toggle="modal">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="imageModalLabel">Crop Image</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div id="croppie-container"></div>
-        </div>
-        <div class="modal-footer">
-          <button id="saveCrop" class="btn btn-primary">Salvar</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        </div>
+ <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageModalLabel">Crop Image</h5>
+      </div>
+      <div class="modal-body">
+        <div id="croppie-container"></div>
+      </div>
+      <div class="modal-footer">
+        <button id="saveCrop" class="btn btn-primary">Salvar</button>
       </div>
     </div>
   </div>
-
-  
+</div>
 
   <script>
     $(document).ready(function () {
@@ -87,27 +83,26 @@
 
       // Function to initialize Croppie
       function initializeCroppie() {
-      if (!resize) {
-        resize = new Croppie(document.getElementById('croppie-container'), {
-          viewport: {
-            width: 200,
-            height: 240,
-            type: 'square', // 'square' or 'circle',
-            quality:1
-          },
-          boundary: {
-            width: 300,
-            height: 300
-          },
-        });
+        if (!resize) {
+          resize = new Croppie(document.getElementById('croppie-container'), {
+            viewport: {
+              width: 200,
+              height: 240,
+              type: 'square'
+            },
+            boundary: {
+              width: 300,
+              height: 300
+            },
+          });
 
-      } else {
-        // If Croppie instance already exists, re-bind to update dimensions
-        resize.bind({
-          url: $('#my-image').attr('src')
-        });
+        } else {
+          // If Croppie instance already exists, re-bind to update dimensions
+          resize.bind({
+            url: $('#my-image').attr('src')
+          });
+        }
       }
-    }
 
       // Save button click event
       $('#saveCrop').on('click', function () {
@@ -118,6 +113,12 @@
           $('#result').attr('src', dataImg).css('display', 'block');
           $('#imageModal').modal('hide');
         });
+      });
+
+      // Prevent modal close on backdrop click
+      $('#imageModal').modal({
+        backdrop: 'static',
+        keyboard: false
       });
 
       // Re-bind Croppie on modal show
