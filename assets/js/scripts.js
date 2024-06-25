@@ -39,13 +39,13 @@ $(document).ready(function () {
       if ($(this).find(".ranked-number").length > 0) {
         $(".grid-photos-item").children().remove();
         $(this).append(
-          `<div class="ranked-number expandOpen">1</div><div class="pullDown" style="position:absolute;right: -10px;top: -5px;border-radius:8px 0 14px 0;padding:5px;"><img src='../assets/img/medal-icon.svg'></div>`
+          `<div class="ranked-number expandOpen">1</div><div class="pullDown" style="position:absolute;right: -10px;top: -5px;border-radius:8px 0 14px 0;padding:5px;"><img src='./assets/img/medal-icon.svg'></div>`
         );
         clickCounter = 2;
       } else {
         $(this).append(
           clickCounter == 1
-            ? `<div class="ranked-number expandOpen">${clickCounter}</div><div class="pullDown" style="position:absolute;right: -10px;top: -5px;border-radius:8px 0 14px 0;padding:5px;"><img src='../assets/img/medal-icon.svg'></div>`
+            ? `<div class="ranked-number expandOpen">${clickCounter}</div><div class="pullDown" style="position:absolute;right: -10px;top: -5px;border-radius:8px 0 14px 0;padding:5px;"><img src='./assets/img/medal-icon.svg'></div>`
             : `<div class="ranked-number expandOpen">${clickCounter}</div>`
         );
 
