@@ -37,13 +37,18 @@ $(document).ready(function () {
     if (clickCounter <= 4) {
       var dataValue = $(this).data("position");
       if ($(this).find(".ranked-number").length > 0) {
-        $(".grid-photos-item").children(".ranked-number").remove();
-        $(this).append('<div class="ranked-number expandOpen">1</div>');
+        $(".grid-photos-item").children().remove();
+        $(this).append(
+          `<div class="ranked-number expandOpen">1</div><div class="pullDown" style="position:absolute;right: -10px;top: -5px;border-radius:8px 0 14px 0;padding:5px;"><img src='../assets/img/medal-icon.svg'></div>`
+        );
         clickCounter = 2;
       } else {
         $(this).append(
-          '<div class="ranked-number expandOpen">' + clickCounter + "</div>"
+          clickCounter == 1
+            ? `<div class="ranked-number expandOpen">${clickCounter}</div><div class="pullDown" style="position:absolute;right: -10px;top: -5px;border-radius:8px 0 14px 0;padding:5px;"><img src='../assets/img/medal-icon.svg'></div>`
+            : `<div class="ranked-number expandOpen">${clickCounter}</div>`
         );
+
         if (clickCounter == 4) {
           $("#icon-cash").addClass("hatch");
           let currentBalance = $("#balance").text();
