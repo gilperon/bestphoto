@@ -80,11 +80,12 @@
       });
 
       $('#modal').on('shown.bs.modal', function () {
+        var aspectRatio = 180 / 230;
         cropper = new Cropper(image, {
           autoCropArea: 0.5,
           cropBoxResizable: false, // Impede a criação de uma nova área de recorte
           dragMode: false,
-          aspectRatio: 3 / 2, // Aspect ratio 3:2
+          aspectRatio: aspectRatio, // Aspect ratio 3:2
           ready: function () {
             // Should set crop box data first here
             cropper.setCropBoxData(cropBoxData).setCanvasData(canvasData);
