@@ -58,6 +58,7 @@ h1,h2,h3,span,p{
     background: #111;
     padding: 14px 15px 14px;
     position: relative;
+    height: 30px;
     //background:linear-gradient(180deg, #2B3139 0%, #181A20 100%);
     &::before{
         content: "";
